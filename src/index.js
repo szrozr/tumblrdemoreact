@@ -1,16 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
+
+import App from './modules/App';
+import data from './modules/assets/data';
 // import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 // import App from './modules/App';
-// import './styles/index.style.scss';
+import './modules/styles/index.style.scss';
 
 class Main extends React.Component {
     render () {
+        console.log('data: ', data[0]);
         return (
-            <React.Fragment>
-                Deneme
-            </React.Fragment>
+            <Router>
+                <Route strict path="/" component={App} />
+            </Router>
         );
     }
 }
